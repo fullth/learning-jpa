@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+        <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+        <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport" />
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <!-- 합쳐지고 최소화된 최신 CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <!-- 부가적인 테마 -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+        <title>JPA</title>
+    </head>
+    <body>
+        <div class="fixed-navbar">
+            <div class="pull-left">
+                <h1 class="page-title">Board</h1>
+            </div>
+        </div>
+        <div id="wrapper">
+            <div class="main-content">
+                <div class="row row-inline-block small-spacing">
+                    <div class="col-xs-12">
+                        <div class="box-content">
+                            <div class="clearfix">
+                                <h4 class="box-title pull-left"></h4>
+                            </div>
+
+                            <!--/* 페이지 Content 영역 */-->
+                            <th:block layout:fragment="content"></th:block>
+
+                        </div>
+                    </div>
+                </div>
+                <footer class="footer">
+                    <ul class="list-inline">
+                        <li>2016 © NinjaAdmin.</li>
+                    </ul>
+                </footer>
+            </div>
+        </div>
+        <!--/* JavaScript 영역 */-->
+        <script th:src="@{/js/moment.min.js}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <th:block layout:fragment="script"></th:block>
+    </body>
+</html>
