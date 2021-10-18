@@ -26,6 +26,16 @@ public class BoardService {
     private final BoardRepository boardRepository;
     
     /**
+     * 게시글 리스트 조회
+     */
+    public List<BoardResponseDTO> findAll() {
+
+        Sort sort = Sort.by(Direction.DESC, "id", "createdDate");
+        List<Board> list = boardRepository.findAll(sort);
+        return list.stream().map(BoardResponseDTO::new).collect(Collectors.toList());
+    }
+
+    /**
      * 게시글 생성
      */
     @Transactional
@@ -35,15 +45,6 @@ public class BoardService {
         return entity.getId();
     }
 
-    /**
-     * 게시글 리스트 조회
-     */
-    public List<BoardResponseDTO> findAll() {
-
-        Sort sort = Sort.by(Direction.DESC, "id", "createdDate");
-        List<Board> list = boardRepository.findAll(sort);
-        return list.stream().map(BoardResponseDTO::new).collect(Collectors.toList());
-    }
 
     /**
      * 게시글 수정

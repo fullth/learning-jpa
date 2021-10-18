@@ -29,6 +29,7 @@ public enum ErrorCode {
      */
     INTERNAL_SERVER_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, "내부 서버 오류입니다."),
 
+    TABLE_DATA_IS_EMPTY(HttpStatus.NO_CONTENT,"정보가 존재하지 않습니다.")
     ;
 
     private final HttpStatus status;
